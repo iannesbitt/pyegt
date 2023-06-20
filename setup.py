@@ -27,10 +27,12 @@ setuptools.setup(
     python_requires='>=3.9, <4.0',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
-        'Intended Audience :: Developers',
+        'Intended Audience :: Education',
+        'Intended Audience :: Science/Research',
         'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
         'Programming Language :: Python :: 3',
+        'Topic :: Scientific/Engineering :: GIS',
     ],
     license='Apache Software License 2.0',
 )
