@@ -140,6 +140,7 @@ class HeightModel:
 
     def __repr__(self) -> str:
         """
+        Convert to printable representation.
         """
         if self.height:
             if self.region:
