@@ -138,6 +138,18 @@ class HeightModel:
         else:
             return 'n/a'
 
+    def available_models():
+        """
+        Return a list of available geoid and tidal models.
+        """
+        return defs.MODEL_LIST
+
+    def available_regions():
+        """
+        Return a list of regions usable with VDatum models.
+        """
+        return defs.REGIONS
+
     def __repr__(self) -> str:
         """
         Convert to printable representation.
