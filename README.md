@@ -1,6 +1,7 @@
 # pyegt
 
 **Ellipsoid-relative geoid and tidal model height lookup**
+
 *Ian Nesbitt, NCEAS-UCSB*
 
 `pyegt` is an open source program developed by [NCEAS](https://nceas.ucsb.edu)
