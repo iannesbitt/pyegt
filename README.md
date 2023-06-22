@@ -36,12 +36,10 @@ Conversion is then a simple addition of these values (`H + N = h`).
 from pyegt.height import HeightModel
 
 h = HeightModel(lat=44.256616, lon=-73.964784, from_model='GEOID12B')
+
 repr(h)
 # HeightModel(model='GEOID12B', lat=44.256616, lon=-73.964784, region='None') -> -28.157 meters
-
-h_meter = float(h)
-h_usft = float(h.in_us_survey_feet())
-print(h)
+print(float(h))
 # -28.157
 print(h.in_feet_us_survey())
 # -92.37842416572809
