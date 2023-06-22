@@ -10,9 +10,9 @@ def test():
     Try EGM2008 with US, AK, and PR coordinates.
     """
     TEST_COORDS = {
-        defs.REGIONS[0]: {'lat': 0, 'lon': 0,},
-        defs.REGIONS[1]: {'lat': 0, 'lon': 0,},
-        defs.REGIONS[2]: {'lat': 0, 'lon': 0,},
+        defs.REGIONS[0]: {'lat': 44.256616, 'lon': -73.964784,}, # Jumping Complex, Lake Placid, NY
+        defs.REGIONS[1]: {'lat': 64.486036, 'lon': -165.292154,}, # Nome River Bridge, Nome, AK
+        defs.REGIONS[2]: {'lat': 18.471310, 'lon': -66.136544,}, # Isla de Cabras, Palo Seco, PR
     }
     MODELS = ['GEOID12B height',
               'EGM2008 height']
