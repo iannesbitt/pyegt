@@ -232,6 +232,15 @@ class HeightModel:
         else:
             return 'n/a'
 
+    def as_string(self) -> str:
+        """
+        Convert to string using ``__str__``.
+
+        :return:
+        :rtype: str
+        """
+        return self.__str__()
+
     def available_models(self) -> list:
         """
         Return a list of available geoid and tidal models.
@@ -285,7 +294,37 @@ class HeightModel:
             return self.height
         else:
             raise ValueError('Cannot convert to float when no height has been calculated.')
+
+    def as_float(self) -> float:
+        """
+        Convert to float using ``__float__``.
+
+        :return: Height value (if exists)
+        :rtype: float
+        """
+        return self.float()
+    
+    def __dict__(self) -> dict:
+        """
+        Return JSON object as dict.
+
+        :return: JSON object
+        :rtype: dict
+        """
+        if self.json:
+            return self.json
+        else:
+            return None
         
+    def as_dict(self) -> dict:
+        """
+        Return JSON object as dict using ``__dict__``.
+
+        :return: JSON object
+        :rtype: dict
+        """
+        return self.__dict__()
+
     def __eq__(self, __value: object) -> bool:
         """
         Use `math.isclose()` to compare as floating point numbers are not always directly comparable.
