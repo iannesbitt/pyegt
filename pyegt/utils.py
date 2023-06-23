@@ -4,15 +4,26 @@ from typing import Union, Literal
 
 from . import defs
 
-def get_ngs_json(lat: float, lon: float, ngs_model: int):
+def get_ngs_url(lat: float, lon: float, ngs_model: int):
     """
     
     Variables:
     :param float lat: Decimal latitude
     :param float lon: Decimal longitude
     :param str ngs_model: The NGS geoid model to use for lookup `(see list) <https://www.ngs.noaa.gov/web_services/geoid.shtml>`_
+    :return: The query url to use in lookup
+    :rtype: str
     """
-    ngs_url = defs.NGS_URL % (lat, lon, ngs_model)
+    return defs.NGS_URL % (lat, lon, ngs_model)
+
+def get_ngs_json(ngs_url: str):
+    """
+    
+    Variables:
+    :param str ngs_url: Decimal latitude
+    :return: The returned json (if applicable)
+    :rtype: json
+    """
     i = 0
     while True:
         print('Querying %s' % (ngs_url))
@@ -31,20 +42,17 @@ def get_ngs_json(lat: float, lon: float, ngs_model: int):
             print('Could not complete request for NGS API in %s tries.' % (i  ))
             exit(1)
 
-def get_vdatum_json(lat: float, lon: float, vdatum_model: str, region: str):
+def get_vdatum_url(lat: float, lon: float, vdatum_model: str, region: str):
     """
     
     Variables:
     :param float lat: Decimal latitude
     :param float lon: Decimal longitude
     :param str vdatum_model: The VDatum geoid, tidal, or potential model to use for lookup `(see list) <https://vdatum.noaa.gov/docs/services.html#step160>`_
+    :param str region: The region to search
     """
     wgs = 'WGS84_G1674'
-    r = 0
-    if region == defs.REGIONS[0]:
-        r = 1
-    while True:
-        vdatum_url = defs.VDATUM_URL % (
+    return defs.VDATUM_URL % (
             lon, # s_x
             lat, # s_y
             wgs, # s_h_frame
@@ -55,6 +63,17 @@ def get_vdatum_json(lat: float, lon: float, vdatum_model: str, region: str):
             vdatum_model, # t_v_geoid
             region # region
             )
+
+def get_vdatum_json(vdatum_url, region):
+    """
+    
+    Variables:
+    :param float lat: Decimal latitude
+    :param float lon: Decimal longitude
+    :param str vdatum_model: The VDatum geoid, tidal, or potential model to use for lookup `(see list) <https://vdatum.noaa.gov/docs/services.html#step160>`_
+    :param str region: The region to search
+    """
+    while True:
         print('Querying %s' % (vdatum_url))
         response = requests.get(vdatum_url)
         json_data = response.json() if response and response.status_code == 200 else None
@@ -62,14 +81,7 @@ def get_vdatum_json(lat: float, lon: float, vdatum_model: str, region: str):
             return json_data
         if json_data and ('errorCode' in json_data):
             if 'Selected Region is Invalid!' in json_data['message']:
-                # retry with different region
-                region = defs.REGIONS[r]
-                r += 1
-                time.sleep(1)
-                if r > len(defs.REGIONS):
-                    raise AttributeError('No valid solution found! Tried with %s different VDatum regions' % (r+1))
-                else:
-                    continue
+                raise AttributeError('Region "%s" is not valid!' % (region))
             else:
                 raise AttributeError('VDatum API error %s: %s' % (json_data['errorCode'], json_data['message']))
 

@@ -68,6 +68,7 @@ class HeightModel:
         self.region = region
         self.wkt = from_wkt
         self.epsg = from_epsg
+        self.url = None
         self.height = None
         if from_model and (not from_wkt and not from_epsg and not from_vrs):
             self.from_model()
@@ -171,18 +172,21 @@ class HeightModel:
         if self.model in defs.NGS_MODELS:
             # format url for NGS API, then interpret json response
             ngs_model = defs.NGS_MODELS[self.model]
-            ngs_json = utils.get_ngs_json(self.lat, self.lon, ngs_model)
-            self.height = float(ngs_json['geoidHeight'])
-            return float(ngs_json['geoidHeight'])
+            self.url = utils.get_ngs_url(self.lat, self.lon, ngs_model)
+            self.json = utils.get_ngs_json(self.url)
+            self.height = float(self.json['geoidHeight'])
+            return float(self.json['geoidHeight'])
         if self.model in defs.VDATUM_MODELS:
             # format url for VDatum API, then interpret json response
-            if self.region:
-                vdatum_json = utils.get_vdatum_json(lat=self.lat, lon=self.lon, vdatum_model=self.vrs, region=self.region)
-                self.height = float(vdatum_json['t_z'])
-                return float(vdatum_json['t_z'])
+            if not self.region:
+                self.region = defs.REGIONS[0]
+                print('Warning: no region set. Defaulting to "%s"' % (self.region))
             else:
-                vdatum_json = utils.get_vdatum_json(lat=self.lat, lon=self.lon, vdatum_model=self.vrs, region=defs.REGIONS[0])
-                return float(vdatum_json['t_z'])
+                self.region = self.region.lower()
+            self.url = utils.get_vdatum_url(lat=self.lat, lon=self.lon, vdatum_model=self.model, region=self.region)
+            self.json = utils.get_vdatum_json(self.url, self.region)
+            self.height = float(self.json['t_z'])
+            return float(self.json['t_z'])
 
     def in_feet_us_survey(self) -> float:
         """
