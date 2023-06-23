@@ -259,7 +259,15 @@ class HeightModel:
 
     def __repr__(self) -> str:
         """
-        Convert to printable representation.
+        Convert to printable representation, for example:
+
+            >>> from pyegt.height import HeightModel
+            >>> h = HeightModel(lat=64.506181, lon=-165.399282, from_model='EGM2008', region='ak')
+            >>> repr(h)
+            HeightModel(lat=64.506181, lon=-165.399282, from_model='EGM2008', region='ak') -> 6.998 meters
+
+        :return: repr() value
+        :rtype: str
         """
         if self.height:
             return "HeightModel(lat=%s, lon=%s, from_model='%s', region='%s') -> %s meters" % (self.model, self.lat, self.lon, self.region, self.height)
