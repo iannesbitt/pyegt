@@ -262,7 +262,7 @@ class HeightModel:
         Convert to printable representation.
         """
         if self.height:
-            return "HeightModel(model='%s', lat=%s, lon=%s, region='%s') -> %s meters" % (self.model, self.lat, self.lon, self.region, self.height)
+            return "HeightModel(lat=%s, lon=%s, from_model='%s', region='%s') -> %s meters" % (self.model, self.lat, self.lon, self.region, self.height)
         else:
             return "HeightModel()"
 
