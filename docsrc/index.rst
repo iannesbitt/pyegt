@@ -26,16 +26,15 @@ compatible with |cesium|) and vice-versa. For more information, see the
     :caption: Resources
 
     about
-    installing
+    install
     lookups
-    tests
 
 .. toctree::
     :maxdepth: 2
     :caption: Library
 
     height
-    differences
+    defs
     test
     utils
 
