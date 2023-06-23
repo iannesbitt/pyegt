@@ -116,6 +116,7 @@ class HeightModel:
             raise AttributeError('Cannot calculate model height, as no model has been set.')
         if model:
             self.model = model
+        self.model = self.model.upper()
         return self.get_height()
         
     def from_vrs(self, vrs: Union[CRS, Literal[None]]):
@@ -156,7 +157,7 @@ class HeightModel:
         :rtype: str
         """
         for m in defs.MODEL_LIST:
-            if m in self.model:
+            if m in self.model.upper():
                 # sometimes las_vrs will be formatted like "EGM2008 height" and this should catch that
                 self.model = m
                 return True
