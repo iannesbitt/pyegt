@@ -72,19 +72,6 @@ def get_vdatum_json(lat: float, lon: float, vdatum_model: str, region: str):
                     continue
             else:
                 raise AttributeError('VDatum API error %s: %s' % (json_data['errorCode'], json_data['message']))
-                
-
-def model_search(vrs: str=None):
-    """
-
-    Variables:
-    :param str vrs: 
-    """
-    for m in defs.MODEL_LIST:
-        if m in vrs:
-            # sometimes las_vrs will be formatted like "EGM2008 height" and this should catch that
-            return m
-    return None
 
 def adjustment(user_vrs: Union[str, Literal[None]]=None,
                las_vrs: Union[str, Literal[None]]=None, # overrides user_vrs.

@@ -148,9 +148,12 @@ class HeightModel:
 
     def verify_model(self) -> bool:
         """
-
+        Search for a model in the list of known models.
+        
         Variables:
-        :param str vrs: 
+        :param str vrs: The search term, potentially a phrase containing the model name; ex: ``EGM2008 height`` will return ``EGM2008``
+        :return: Returns the correctly formatted model name to use in the API query
+        :rtype: str
         """
         for m in defs.MODEL_LIST:
             if m in self.model:
