@@ -22,8 +22,8 @@ The following example uses the |ngsafg| to perform a lookup against
 
     >>> from pyegt.height import HeightModel
     >>> h = HeightModel(lat=44.256616, lon=-73.964784, from_model='GEOID12B')
-    >>> repr(h)
-    HeightModel(model='GEOID12B', lat=44.256616, lon=-73.964784, region='None') -> -28.157 meters
+    >>> h
+    HeightModel(lat=44.256616, lon=-73.964784, from_model='GEOID12B', region='None') -> -28.157 meters
     >>> float(h)
     -28.157
     >>> h.in_feet_us_survey()
@@ -33,8 +33,10 @@ The following example uses the |ngsafg| to perform a lookup against
 
 .. code-block:: python
 
-    from pyegt.height import HeightModel
-    h = HeightModel(lat=44.256616, lon=-73.964784, from_model='EGM2008', region='contiguous')
+    >>> from pyegt.height import HeightModel
+    >>> h = HeightModel(lat=44.256616, lon=-73.964784, from_model='EGM2008', region='contiguous')
+    >>> h
+    HeightModel(model='EGM2008', lat=44.256616, lon=-73.964784, region='contiguous') -> -28.899 meters
 
 .. note:
 

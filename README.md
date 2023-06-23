@@ -34,14 +34,12 @@ Conversion is then a simple addition of these values (`H + N = h`).
 ## Usage
 
 ```python
-from pyegt.height import HeightModel
-
-h = HeightModel(lat=44.256616, lon=-73.964784, from_model='GEOID12B')
-
-repr(h)
-# HeightModel(model='GEOID12B', lat=44.256616, lon=-73.964784, region='None') -> -28.157 meters
-print(float(h))
-# -28.157
-print(h.in_feet_us_survey())
-# -92.37842416572809
+>>> from pyegt.height import HeightModel
+>>> h = HeightModel(lat=44.256616, lon=-73.964784, from_model='GEOID12B')
+>>> repr(h)
+HeightModel(lat=44.256616, lon=-73.964784, from_model='GEOID12B', region='None') -> -28.157 meters
+>>> float(h)
+-28.157
+>>> h.in_feet_us_survey()
+-92.37842416572809
 ```
