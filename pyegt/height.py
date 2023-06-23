@@ -192,6 +192,9 @@ class HeightModel:
         """
         Convert to US survey foot (for imperial feet use `in_feet()`).
         1 imperial foot = 0.999998 US survey feet
+
+        :return: Height value in usft (if it exists)
+        :rtype: float
         """
         if self.height:
             return self.height * 3.2808333333
@@ -200,6 +203,9 @@ class HeightModel:
         """
         Convert to imperial foot (for US survey feet use `in_feet_us_survey()`).
         1 imperial foot = 0.999998 US survey feet
+
+        :return: Height value in ft (if it exists)
+        :rtype: float
         """
         if self.height:
             return self.height * 3.280839895
@@ -207,6 +213,9 @@ class HeightModel:
     def in_cm(self) -> float:
         """
         Convert to centimeters.
+
+        :return: Height value in cm (if it exists)
+        :rtype: float
         """
         if self.height:
             return self.height * 100
@@ -214,6 +223,9 @@ class HeightModel:
     def __str__(self) -> str:
         """
         Convert to string.
+
+        :return: String representation of height or ``"n/a"``
+        :rtype: str
         """
         if self.height:
             return '%s' % (self.height)
@@ -223,6 +235,9 @@ class HeightModel:
     def available_models(self) -> list:
         """
         Return a list of available geoid and tidal models.
+
+        :return: List of models
+        :rtype: list
         """
         return defs.MODEL_LIST
 
@@ -236,6 +251,9 @@ class HeightModel:
 
             ['contiguous', 'ak', 'seak', 'as', 'chesapeak_delaware',
             'westcoast', 'gcnmi', 'hi', 'prvi', 'sgi', 'spi', 'sli']
+
+        :return: List of regions
+        :rtype: list
         """
         return defs.REGIONS
 
@@ -251,6 +269,9 @@ class HeightModel:
     def __float__(self) -> float:
         """
         Convert to float.
+
+        :return: Height value (if exists)
+        :rtype: float
         """
         if self.height:
             return self.height
@@ -260,6 +281,9 @@ class HeightModel:
     def __eq__(self, __value: object) -> bool:
         """
         Use `math.isclose()` to compare as floating point numbers are not always directly comparable.
+
+        :return: Boolean equality of two floats
+        :rtype: bool
         """
         if self.height:
             return isclose(self.height, float(__value), rel_tol=1e-9, abs_tol=0.0)
