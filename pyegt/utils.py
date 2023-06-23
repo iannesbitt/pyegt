@@ -73,14 +73,14 @@ def get_vdatum_json(lat: float, lon: float, vdatum_model: str, region: str):
             else:
                 raise AttributeError('VDatum API error %s: %s' % (json_data['errorCode'], json_data['message']))
 
-def adjustment(user_vrs: Union[str, Literal[None]]=None,
+"""def adjustment(user_vrs: Union[str, Literal[None]]=None,
                las_vrs: Union[str, Literal[None]]=None, # overrides user_vrs.
                # consequently implies we trust file headers;
                # this is done to support projects with multiple CRS
                # and to enforce correct CRS info in database
                lat:float=0.0, lon: float=0.0,
                region=defs.REGIONS[0]):
-    """
+    ### docstring start
     Get the geoid, tidal, or geopotential model height above the ellipsoid
     in order to convert model-referenced heights to ellipsoid height (i.e.
     compatible with Cesium) and vice-versa.
@@ -137,7 +137,7 @@ def adjustment(user_vrs: Union[str, Literal[None]]=None,
 
     :return: 
     :rtype: int or pyproj.crs.CRS
-    """
+    ### docstring end
 
     # the 9 possible scenarios and their outcomes
     # 1. matched las_vrs / matched user_vrs -> las_vrs
@@ -190,3 +190,4 @@ def adjustment(user_vrs: Union[str, Literal[None]]=None,
         # format url for VDatum API, then interpret json response
         vdatum_json = get_vdatum_json(lat, lon, vrs, region)
         return float(vdatum_json['t_z'])
+"""
