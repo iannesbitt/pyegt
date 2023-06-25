@@ -4,6 +4,9 @@
 
 *Ian Nesbitt, NCEAS-UCSB*
 
+[![PyPI](https://img.shields.io/pypi/v/pyegt)](https://pypi.org/project/pyegt)
+[![Conda](https://img.shields.io/conda/v/iannesbitt/pyegt)](https://anaconda.org/iannesbitt/readgssi)
+
 `pyegt` is an open source program developed by [NCEAS](https://nceas.ucsb.edu)
 to look up the geoid, tidal, or geopotential model height above the ellipsoid
 in order to convert model-referenced heights to ellipsoid height (i.e.

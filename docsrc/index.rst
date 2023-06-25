@@ -10,9 +10,18 @@
 
     <a href="https://github.com/iannesbitt/pyegt" target="_blank">https://github.com/iannesbitt/pyegt</a>
 
-|github|
-**Ellipsoid-relative geoid and tidal model height lookup**
-*by Ian Nesbitt, NCEAS-UCSB*
+pyegt |version|
+#####################################
+.. image:: https://img.shields.io/pypi/v/pyegt
+    :target: https://pypi.org/project/pyegt
+    :alt: PyPI
+.. image:: https://img.shields.io/conda/v/iannesbitt/pyegt
+    :target: https://anaconda.org/iannesbitt/readgssi
+    :alt: Conda
+
+| |github|
+| **Ellipsoid-relative geoid and tidal model height lookup**
+| *by Ian Nesbitt, NCEAS-UCSB*
 
 ``pyegt`` is an open source program developed by |nceas| to look up
 the geoid, tidal, or geopotential model height above the ellipsoid
