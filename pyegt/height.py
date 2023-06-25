@@ -278,7 +278,7 @@ class HeightModel:
         :rtype: str
         """
         if self.height:
-            return "HeightModel(lat=%s, lon=%s, from_model='%s', region='%s') -> %s meters" % (self.model, self.lat, self.lon, self.region, self.height)
+            return "HeightModel(lat=%s, lon=%s, from_model='%s', region='%s') -> %s meters" % (self.lat, self.lon, self.model, self.region, self.height)
         else:
             return "HeightModel()"
 
