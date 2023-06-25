@@ -26,7 +26,7 @@ setuptools.setup(
     },
     python_requires='>=3.9, <4.0',
     classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
+        'Development Status :: 3 - Alpha',
         'Intended Audience :: Education',
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: Apache Software License',
