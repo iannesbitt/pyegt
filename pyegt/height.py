@@ -38,7 +38,7 @@ class HeightModel:
     or `VDatum <https://vdatum.noaa.gov/docs/services.html>`_ API to look up
     model height relative to the ellipsoid (``N``).
 
-    Variables:
+
     :param float lat: Decimal latitude
     :param float lon: Decimal longitude
     :param region: Region (for list see :py:func:`pyegt.height.HeightModel.from_model`)
@@ -90,7 +90,7 @@ class HeightModel:
         Will set ``self.model`` if the ``model`` variable is supplied.
         Finally, it will call ``self.get_height()``.
 
-        Valid model values are:
+        Valid model values are::
 
             # using NGS API
             ['GEOID99', 'G99SSS', 'GEOID03', 'USGG2003', 'GEOID06', 'USGG2009',
@@ -152,7 +152,6 @@ class HeightModel:
         """
         Search for a model in the list of known models.
         
-        Variables:
         :param str vrs: The search term, potentially a phrase containing the model name; ex: ``EGM2008 height`` will return ``EGM2008``
         :return: Returns the correctly formatted model name to use in the API query
         :rtype: str
@@ -256,7 +255,7 @@ class HeightModel:
         See `VDatum regions <https://vdatum.noaa.gov/docs/services.html#step140>`_
         in the docs.
 
-        Regions:
+        Regions::
 
             ['contiguous', 'ak', 'seak', 'as', 'chesapeak_delaware',
             'westcoast', 'gcnmi', 'hi', 'prvi', 'sgi', 'spi', 'sli']
@@ -268,7 +267,7 @@ class HeightModel:
 
     def __repr__(self) -> str:
         """
-        Convert to printable representation, for example:
+        Convert to printable representation, for example::
 
             >>> from pyegt.height import HeightModel
             >>> h = HeightModel(lat=64.506181, lon=-165.399282, from_model='EGM2008', region='ak')

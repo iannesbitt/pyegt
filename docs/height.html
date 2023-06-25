@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pyegt.height &mdash; pyegt 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyegt.defs" href="defs.html" />
+    <link rel="prev" title="3. Using pyegt" href="lookups.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyegt
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                0.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">1. About pyegt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lookups.html">3. Using pyegt</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">pyegt.height</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pyegt.height.HeightModel"><code class="docutils literal notranslate"><span class="pre">HeightModel</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.as_dict"><code class="docutils literal notranslate"><span class="pre">HeightModel.as_dict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.as_float"><code class="docutils literal notranslate"><span class="pre">HeightModel.as_float()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.as_string"><code class="docutils literal notranslate"><span class="pre">HeightModel.as_string()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.available_models"><code class="docutils literal notranslate"><span class="pre">HeightModel.available_models()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.available_regions"><code class="docutils literal notranslate"><span class="pre">HeightModel.available_regions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.from_epsg"><code class="docutils literal notranslate"><span class="pre">HeightModel.from_epsg()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.from_model"><code class="docutils literal notranslate"><span class="pre">HeightModel.from_model()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.from_vrs"><code class="docutils literal notranslate"><span class="pre">HeightModel.from_vrs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.from_wkt"><code class="docutils literal notranslate"><span class="pre">HeightModel.from_wkt()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.get_height"><code class="docutils literal notranslate"><span class="pre">HeightModel.get_height()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.in_cm"><code class="docutils literal notranslate"><span class="pre">HeightModel.in_cm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.in_feet"><code class="docutils literal notranslate"><span class="pre">HeightModel.in_feet()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.in_feet_us_survey"><code class="docutils literal notranslate"><span class="pre">HeightModel.in_feet_us_survey()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.verify_model"><code class="docutils literal notranslate"><span class="pre">HeightModel.verify_model()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="defs.html"><code class="docutils literal notranslate"><span class="pre">pyegt.defs</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><code class="docutils literal notranslate"><span class="pre">pyegt.test</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html"><code class="docutils literal notranslate"><span class="pre">pyegt.utils</span></code></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyegt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">pyegt.height</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/height.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pyegt.height">
+<span id="pyegt-height"></span><h1><code class="docutils literal notranslate"><span class="pre">pyegt.height</span></code><a class="headerlink" href="#module-pyegt.height" title="Permalink to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyegt.height.</span></span><span class="sig-name descname"><span class="pre">HeightModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_vrs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://pyproj4.github.io/pyproj/stable/api/crs/crs.html#pyproj.crs.CRS" title="(in pyproj v3.6.0)"><span class="pre">CRS</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_wkt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_epsg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyegt.height.HeightModel" title="Permalink to this definition"></a></dt>
+<dd><p>Look up the geoid, tidal, or geopotential model height above the ellipsoid
+in order to convert model-referenced heights to ellipsoid height (i.e.
+compatible with Cesium) and vice-versa.</p>
+<p>The following figure demonstrates the difference between geoid, ellipsoid,
+and topographic ground surface:</p>
+<figure class="align-center" id="id3">
+<img alt="https://user-images.githubusercontent.com/18689918/239385604-5b5dd0df-e2fb-4ea9-90e7-575287a069e6.png" src="https://user-images.githubusercontent.com/18689918/239385604-5b5dd0df-e2fb-4ea9-90e7-575287a069e6.png" />
+<figcaption>
+<p><span class="caption-text">Diagram showing conceptual model of ellipsoid height <code class="docutils literal notranslate"><span class="pre">h</span></code>, geoid
+height <code class="docutils literal notranslate"><span class="pre">H</span></code>, and height of geoid relative to ellipsoid <code class="docutils literal notranslate"><span class="pre">N</span></code>
+along with topographic surface (grey).</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>Ellipsoidal height (<code class="docutils literal notranslate"><span class="pre">h</span></code>) is generally used in global projections such as
+Cesium due to its small digital footprint and ease of calculation relative
+to systems based on gravity or geopotential height. However, gravity and
+tides are influenced by local differences in Earth’s density and other
+factors. Therefore some projects prefer reference systems that use height
+referenced to a geoid or tidal model (<code class="docutils literal notranslate"><span class="pre">H</span></code>) which provides a much easier
+framework to understand height relative to, for example, modeled mean sea
+level or sea level potential. Converting from <code class="docutils literal notranslate"><span class="pre">H</span></code> to <code class="docutils literal notranslate"><span class="pre">h</span></code> requires
+knowing the height difference between the geoid and the ellipsoid (<code class="docutils literal notranslate"><span class="pre">N</span></code>).
+Conversion is then a simple addition of these values (<code class="docutils literal notranslate"><span class="pre">H</span> <span class="pre">+</span> <span class="pre">N</span> <span class="pre">=</span> <span class="pre">h</span></code>).</p>
+<p>The lookup performed by this <a class="reference internal" href="#pyegt.height.HeightModel" title="pyegt.height.HeightModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyegt.height.HeightModel</span></code></a> class will
+use either the <a class="reference external" href="https://www.ngs.noaa.gov/web_services/geoid.shtml">NGS</a>
+or <a class="reference external" href="https://vdatum.noaa.gov/docs/services.html">VDatum</a> API to look up
+model height relative to the ellipsoid (<code class="docutils literal notranslate"><span class="pre">N</span></code>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – Decimal latitude</p></li>
+<li><p><strong>lon</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – Decimal longitude</p></li>
+<li><p><strong>region</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><em>None</em>) – Region (for list see <a class="reference internal" href="#pyegt.height.HeightModel.from_model" title="pyegt.height.HeightModel.from_model"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyegt.height.HeightModel.from_model()</span></code></a>)</p></li>
+<li><p><strong>from_model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><em>None</em>) – Model (for list see <a class="reference internal" href="#pyegt.height.HeightModel.available_regions" title="pyegt.height.HeightModel.available_regions"><code class="xref py py-func docutils literal notranslate"><span class="pre">pyegt.height.HeightModel.available_regions()</span></code></a>)</p></li>
+<li><p><strong>from_vrs</strong> (<em>pyproj.CRS</em><em> or </em><em>None</em>) – The vertical reference system to convert from (<code class="docutils literal notranslate"><span class="pre">CRS.is_vertical</span></code> must be true for the main CRS or a sub-CRS)</p></li>
+<li><p><strong>from_wkt</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><em>None</em>) – Use well-known text to get a VRS to convert from</p></li>
+<li><p><strong>from_epsg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><em>None</em>) – Use an EPSG code to get a VRS to convert from</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.as_dict">
+<span class="sig-name descname"><span class="pre">as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.as_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Return JSON object as dict using <code class="docutils literal notranslate"><span class="pre">__dict__</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JSON object</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)">dict</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.as_float">
+<span class="sig-name descname"><span class="pre">as_float</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.as_float" title="Permalink to this definition"></a></dt>
+<dd><p>Convert to float using <code class="docutils literal notranslate"><span class="pre">__float__</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Height value (if exists)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.as_string">
+<span class="sig-name descname"><span class="pre">as_string</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.as_string" title="Permalink to this definition"></a></dt>
+<dd><p>Convert to string using <code class="docutils literal notranslate"><span class="pre">__str__</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.available_models">
+<span class="sig-name descname"><span class="pre">available_models</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><span class="pre">list</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.available_models" title="Permalink to this definition"></a></dt>
+<dd><p>Return a list of available geoid and tidal models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of models</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.available_regions">
+<span class="sig-name descname"><span class="pre">available_regions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)"><span class="pre">list</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.available_regions" title="Permalink to this definition"></a></dt>
+<dd><p>Return a list of regions usable with VDatum models.
+See <a class="reference external" href="https://vdatum.noaa.gov/docs/services.html#step140">VDatum regions</a>
+in the docs.</p>
+<p>Regions:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;contiguous&#39;</span><span class="p">,</span> <span class="s1">&#39;ak&#39;</span><span class="p">,</span> <span class="s1">&#39;seak&#39;</span><span class="p">,</span> <span class="s1">&#39;as&#39;</span><span class="p">,</span> <span class="s1">&#39;chesapeak_delaware&#39;</span><span class="p">,</span>
+<span class="s1">&#39;westcoast&#39;</span><span class="p">,</span> <span class="s1">&#39;gcnmi&#39;</span><span class="p">,</span> <span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;prvi&#39;</span><span class="p">,</span> <span class="s1">&#39;sgi&#39;</span><span class="p">,</span> <span class="s1">&#39;spi&#39;</span><span class="p">,</span> <span class="s1">&#39;sli&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List of regions</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.11)">list</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.from_epsg">
+<span class="sig-name descname"><span class="pre">from_epsg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">epsg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyegt.height.HeightModel.from_epsg" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.from_model">
+<span class="sig-name descname"><span class="pre">from_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.11)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyegt.height.HeightModel.from_model" title="Permalink to this definition"></a></dt>
+<dd><p>Compute the height above the ellipsoid for the given model.
+Will set <code class="docutils literal notranslate"><span class="pre">self.model</span></code> if the <code class="docutils literal notranslate"><span class="pre">model</span></code> variable is supplied.
+Finally, it will call <code class="docutils literal notranslate"><span class="pre">self.get_height()</span></code>.</p>
+<p>Valid model values are:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># using NGS API</span>
+<span class="p">[</span><span class="s1">&#39;GEOID99&#39;</span><span class="p">,</span> <span class="s1">&#39;G99SSS&#39;</span><span class="p">,</span> <span class="s1">&#39;GEOID03&#39;</span><span class="p">,</span> <span class="s1">&#39;USGG2003&#39;</span><span class="p">,</span> <span class="s1">&#39;GEOID06&#39;</span><span class="p">,</span> <span class="s1">&#39;USGG2009&#39;</span><span class="p">,</span>
+<span class="s1">&#39;GEOID09&#39;</span><span class="p">,</span> <span class="s1">&#39;XUSHG&#39;</span><span class="p">,</span> <span class="s1">&#39;USGG2012&#39;</span><span class="p">,</span> <span class="s1">&#39;GEOID12A&#39;</span><span class="p">,</span> <span class="s1">&#39;GEOID12B&#39;</span><span class="p">,</span> <span class="s1">&#39;GEOID18&#39;</span><span class="p">,]</span>
+
+<span class="c1"># using VDatum API</span>
+<span class="p">[</span><span class="s1">&#39;NAVD88&#39;</span><span class="p">,</span> <span class="s1">&#39;NGVD29&#39;</span><span class="p">,</span> <span class="s1">&#39;ASVD02&#39;</span><span class="p">,</span> <span class="s1">&#39;W0_USGG2012&#39;</span><span class="p">,</span> <span class="s1">&#39;GUVD04&#39;</span><span class="p">,</span> <span class="s1">&#39;NMVD03&#39;</span><span class="p">,</span>
+<span class="s1">&#39;PRVD02&#39;</span><span class="p">,</span> <span class="s1">&#39;VIVD09&#39;</span><span class="p">,</span> <span class="s1">&#39;CRD&#39;</span><span class="p">,</span> <span class="s1">&#39;EGM2008&#39;</span><span class="p">,</span> <span class="s1">&#39;EGM1996&#39;</span><span class="p">,</span> <span class="s1">&#39;EGM1984&#39;</span><span class="p">,</span>
+<span class="s1">&#39;XGEOID16B&#39;</span><span class="p">,</span> <span class="s1">&#39;XGEOID17B&#39;</span><span class="p">,</span> <span class="s1">&#39;XGEOID18B&#39;</span><span class="p">,</span> <span class="s1">&#39;XGEOID19B&#39;</span><span class="p">,</span> <span class="s1">&#39;XGEOID20B&#39;</span><span class="p">,</span>
+<span class="s1">&#39;IGLD85&#39;</span><span class="p">,</span> <span class="s1">&#39;LWD_IGLD85&#39;</span><span class="p">,</span> <span class="s1">&#39;OHWM_IGLD85&#39;</span><span class="p">,</span> <span class="s1">&#39;CRD&#39;</span><span class="p">,</span> <span class="s1">&#39;LMSL&#39;</span><span class="p">,</span> <span class="s1">&#39;MLLW&#39;</span><span class="p">,</span>
+<span class="s1">&#39;MLW&#39;</span><span class="p">,</span> <span class="s1">&#39;MTL&#39;</span><span class="p">,</span> <span class="s1">&#39;DTL&#39;</span><span class="p">,</span> <span class="s1">&#39;MHW&#39;</span><span class="p">,</span> <span class="s1">&#39;MHHW&#39;</span><span class="p">,</span> <span class="s1">&#39;LWD&#39;</span><span class="p">,</span> <span class="s1">&#39;NAD27&#39;</span><span class="p">,</span> <span class="s1">&#39;NAD83_1986&#39;</span><span class="p">,</span>
+<span class="s1">&#39;NAD83_2011&#39;</span><span class="p">,</span> <span class="s1">&#39;NAD83_NSRS2007&#39;</span><span class="p">,</span> <span class="s1">&#39;NAD83_MARP00&#39;</span><span class="p">,</span> <span class="s1">&#39;NAD83_PACP00&#39;</span><span class="p">,</span>
+<span class="s1">&#39;WGS84_G1674&#39;</span><span class="p">,</span> <span class="s1">&#39;ITRF2014&#39;</span><span class="p">,</span> <span class="s1">&#39;IGS14&#39;</span><span class="p">,</span> <span class="s1">&#39;ITRF2008&#39;</span><span class="p">,</span> <span class="s1">&#39;IGS08&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ITRF2005&#39;</span><span class="p">,</span> <span class="s1">&#39;IGS2005&#39;</span><span class="p">,</span> <span class="s1">&#39;WGS84_G1150&#39;</span><span class="p">,</span> <span class="s1">&#39;ITRF2000&#39;</span><span class="p">,</span> <span class="s1">&#39;IGS00&#39;</span><span class="p">,</span> <span class="s1">&#39;IGb00&#39;</span><span class="p">,</span>
+<span class="s1">&#39;ITRF96&#39;</span><span class="p">,</span> <span class="s1">&#39;WGS84_G873&#39;</span><span class="p">,</span> <span class="s1">&#39;ITRF94&#39;</span><span class="p">,</span> <span class="s1">&#39;ITRF93&#39;</span><span class="p">,</span> <span class="s1">&#39;ITRF92&#39;</span><span class="p">,</span> <span class="s1">&#39;SIOMIT92&#39;</span><span class="p">,</span>
+<span class="s1">&#39;WGS84_G730&#39;</span><span class="p">,</span> <span class="s1">&#39;ITRF91&#39;</span><span class="p">,</span> <span class="s1">&#39;ITRF90&#39;</span><span class="p">,</span> <span class="s1">&#39;ITRF89&#39;</span><span class="p">,</span> <span class="s1">&#39;ITRF88&#39;</span><span class="p">,</span>
+<span class="s1">&#39;WGS84_TRANSIT&#39;</span><span class="p">,</span> <span class="s1">&#39;WGS84_G1762&#39;</span><span class="p">,</span> <span class="s1">&#39;WGS84_G2139&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Documentation can be found here for the
+<a class="reference external" href="https://www.ngs.noaa.gov/web_services/geoid.shtml">NGS</a> and
+<a class="reference external" href="https://vdatum.noaa.gov/docs/services.html">VDatum</a> APIs.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.from_vrs">
+<span class="sig-name descname"><span class="pre">from_vrs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vrs</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://pyproj4.github.io/pyproj/stable/api/crs/crs.html#pyproj.crs.CRS" title="(in pyproj v3.6.0)"><span class="pre">CRS</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyegt.height.HeightModel.from_vrs" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.from_wkt">
+<span class="sig-name descname"><span class="pre">from_wkt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wkt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.11)"><span class="pre">Literal</span></a><span class="p"><span class="pre">[</span></span><span class="pre">None</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyegt.height.HeightModel.from_wkt" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.get_height">
+<span class="sig-name descname"><span class="pre">get_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.get_height" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.in_cm">
+<span class="sig-name descname"><span class="pre">in_cm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.in_cm" title="Permalink to this definition"></a></dt>
+<dd><p>Convert to centimeters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Height value in cm (if it exists)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.in_feet">
+<span class="sig-name descname"><span class="pre">in_feet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.in_feet" title="Permalink to this definition"></a></dt>
+<dd><p>Convert to imperial foot (for US survey feet use <cite>in_feet_us_survey()</cite>).
+1 imperial foot = 0.999998 US survey feet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Height value in ft (if it exists)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.in_feet_us_survey">
+<span class="sig-name descname"><span class="pre">in_feet_us_survey</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.in_feet_us_survey" title="Permalink to this definition"></a></dt>
+<dd><p>Convert to US survey foot (for imperial feet use <cite>in_feet()</cite>).
+1 imperial foot = 0.999998 US survey feet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Height value in usft (if it exists)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.verify_model">
+<span class="sig-name descname"><span class="pre">verify_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.verify_model" title="Permalink to this definition"></a></dt>
+<dd><p>Search for a model in the list of known models.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>vrs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The search term, potentially a phrase containing the model name; ex: <code class="docutils literal notranslate"><span class="pre">EGM2008</span> <span class="pre">height</span></code> will return <code class="docutils literal notranslate"><span class="pre">EGM2008</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Returns the correctly formatted model name to use in the API query</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<hr class="docutils" />
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+<p><a class="reference external" href="#top">Back to top ↑</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="lookups.html" class="btn btn-neutral float-left" title="3. Using pyegt" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="defs.html" class="btn btn-neutral float-right" title="pyegt.defs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, National Center for Ecological Analysis and Synthesis, University of California Santa Barbara (NCEAS-UCSB).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

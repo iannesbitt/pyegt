@@ -5,9 +5,9 @@ def test():
     """
     Run tests.
 
-    Try GEOID12B with US, AK, and PR coordinates.
+    - Try GEOID12B with US, AK, and PR coordinates.
 
-    Try EGM2008 with US, AK, and PR coordinates.
+    - Try EGM2008 with US, AK, and PR coordinates.
     """
     TEST_COORDS = {
         defs.REGIONS[0]: {'lat': 44.256616, 'lon': -73.964784,}, # Jumping Complex, Lake Placid, NY

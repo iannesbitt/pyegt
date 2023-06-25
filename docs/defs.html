@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pyegt.defs &mdash; pyegt 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyegt.test" href="test.html" />
+    <link rel="prev" title="pyegt.height" href="height.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyegt
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                0.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">1. About pyegt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">2. Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lookups.html">3. Using pyegt</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Library</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="height.html"><code class="docutils literal notranslate"><span class="pre">pyegt.height</span></code></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">pyegt.defs</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pyegt.defs.NGS_MODELS"><code class="docutils literal notranslate"><span class="pre">NGS_MODELS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyegt.defs.REGIONS"><code class="docutils literal notranslate"><span class="pre">REGIONS</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pyegt.defs.VDATUM_MODELS"><code class="docutils literal notranslate"><span class="pre">VDATUM_MODELS</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><code class="docutils literal notranslate"><span class="pre">pyegt.test</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html"><code class="docutils literal notranslate"><span class="pre">pyegt.utils</span></code></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyegt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><code class="docutils literal notranslate"><span class="pre">pyegt.defs</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/defs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-pyegt.defs">
+<span id="pyegt-defs"></span><h1><code class="docutils literal notranslate"><span class="pre">pyegt.defs</span></code><a class="headerlink" href="#module-pyegt.defs" title="Permalink to this heading"></a></h1>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyegt.defs.NGS_MODELS">
+<span class="sig-prename descclassname"><span class="pre">pyegt.defs.</span></span><span class="sig-name descname"><span class="pre">NGS_MODELS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'G99SSS':</span> <span class="pre">2,</span> <span class="pre">'GEOID03':</span> <span class="pre">3,</span> <span class="pre">'GEOID06':</span> <span class="pre">5,</span> <span class="pre">'GEOID09':</span> <span class="pre">7,</span> <span class="pre">'GEOID12A':</span> <span class="pre">12,</span> <span class="pre">'GEOID12B':</span> <span class="pre">13,</span> <span class="pre">'GEOID18':</span> <span class="pre">14,</span> <span class="pre">'GEOID99':</span> <span class="pre">1,</span> <span class="pre">'USGG2003':</span> <span class="pre">4,</span> <span class="pre">'USGG2009':</span> <span class="pre">6,</span> <span class="pre">'USGG2012':</span> <span class="pre">11,</span> <span class="pre">'XUSHG':</span> <span class="pre">9}</span></em><a class="headerlink" href="#pyegt.defs.NGS_MODELS" title="Permalink to this definition"></a></dt>
+<dd><p>Geoid model numbers used in the NGS API.
+From <a href="https://www.ngs.noaa.gov/web_services/geoid.shtml" target="_blank">NOAA NGS API for Geoid</a>.</p>
+<p>Mapping:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NGS_MODELS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;GEOID99&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;G99SSS&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;GEOID03&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;USGG2003&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+              <span class="s1">&#39;GEOID06&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;USGG2009&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span> <span class="s1">&#39;GEOID09&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">&#39;XUSHG&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+              <span class="s1">&#39;USGG2012&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">&#39;GEOID12A&#39;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">&#39;GEOID12B&#39;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="s1">&#39;GEOID18&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyegt.defs.REGIONS">
+<span class="sig-prename descclassname"><span class="pre">pyegt.defs.</span></span><span class="sig-name descname"><span class="pre">REGIONS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['contiguous',</span> <span class="pre">'ak',</span> <span class="pre">'seak',</span> <span class="pre">'as',</span> <span class="pre">'chesapeak_delaware',</span> <span class="pre">'westcoast',</span> <span class="pre">'gcnmi',</span> <span class="pre">'hi',</span> <span class="pre">'prvi',</span> <span class="pre">'sgi',</span> <span class="pre">'spi',</span> <span class="pre">'sli']</span></em><a class="headerlink" href="#pyegt.defs.REGIONS" title="Permalink to this definition"></a></dt>
+<dd><p>List of regions used in the VDatum API. From <a href="https://vdatum.noaa.gov/docs/services.html#step140" target="_blank">VDatum API Regions List</a>.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="pyegt.defs.VDATUM_MODELS">
+<span class="sig-prename descclassname"><span class="pre">pyegt.defs.</span></span><span class="sig-name descname"><span class="pre">VDATUM_MODELS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['NAVD88',</span> <span class="pre">'NGVD29',</span> <span class="pre">'ASVD02',</span> <span class="pre">'W0_USGG2012',</span> <span class="pre">'GUVD04',</span> <span class="pre">'NMVD03',</span> <span class="pre">'PRVD02',</span> <span class="pre">'VIVD09',</span> <span class="pre">'CRD',</span> <span class="pre">'EGM2008',</span> <span class="pre">'EGM1996',</span> <span class="pre">'EGM1984',</span> <span class="pre">'XGEOID16B',</span> <span class="pre">'XGEOID17B',</span> <span class="pre">'XGEOID18B',</span> <span class="pre">'XGEOID19B',</span> <span class="pre">'XGEOID20B',</span> <span class="pre">'IGLD85',</span> <span class="pre">'LWD_IGLD85',</span> <span class="pre">'OHWM_IGLD85',</span> <span class="pre">'CRD',</span> <span class="pre">'LMSL',</span> <span class="pre">'MLLW',</span> <span class="pre">'MLW',</span> <span class="pre">'MTL',</span> <span class="pre">'DTL',</span> <span class="pre">'MHW',</span> <span class="pre">'MHHW',</span> <span class="pre">'LWD',</span> <span class="pre">'NAD27',</span> <span class="pre">'NAD83_1986',</span> <span class="pre">'NAD83_2011',</span> <span class="pre">'NAD83_NSRS2007',</span> <span class="pre">'NAD83_MARP00',</span> <span class="pre">'NAD83_PACP00',</span> <span class="pre">'WGS84_G1674',</span> <span class="pre">'ITRF2014',</span> <span class="pre">'IGS14',</span> <span class="pre">'ITRF2008',</span> <span class="pre">'IGS08',</span> <span class="pre">'ITRF2005',</span> <span class="pre">'IGS2005',</span> <span class="pre">'WGS84_G1150',</span> <span class="pre">'ITRF2000',</span> <span class="pre">'IGS00',</span> <span class="pre">'IGb00',</span> <span class="pre">'ITRF96',</span> <span class="pre">'WGS84_G873',</span> <span class="pre">'ITRF94',</span> <span class="pre">'ITRF93',</span> <span class="pre">'ITRF92',</span> <span class="pre">'SIOMIT92',</span> <span class="pre">'WGS84_G730',</span> <span class="pre">'ITRF91',</span> <span class="pre">'ITRF90',</span> <span class="pre">'ITRF89',</span> <span class="pre">'ITRF88',</span> <span class="pre">'WGS84_TRANSIT',</span> <span class="pre">'WGS84_G1762',</span> <span class="pre">'WGS84_G2139']</span></em><a class="headerlink" href="#pyegt.defs.VDATUM_MODELS" title="Permalink to this definition"></a></dt>
+<dd><p>List of geoid and tidal models used in the VDatum API. From <a href="https://vdatum.noaa.gov/docs/services.html#step160" target="_blank">VDatum API Vertical Reference Frames List</a>.</p>
+</dd></dl>
+
+<hr class="docutils" />
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+<p><a class="reference external" href="#top">Back to top ↑</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="height.html" class="btn btn-neutral float-left" title="pyegt.height" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="test.html" class="btn btn-neutral float-right" title="pyegt.test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, National Center for Ecological Analysis and Synthesis, University of California Santa Barbara (NCEAS-UCSB).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

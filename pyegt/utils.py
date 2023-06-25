@@ -6,8 +6,6 @@ from . import defs
 
 def get_ngs_url(lat: float, lon: float, ngs_model: int):
     """
-    
-    Variables:
     :param float lat: Decimal latitude
     :param float lon: Decimal longitude
     :param str ngs_model: The NGS geoid model to use for lookup `(see list) <https://www.ngs.noaa.gov/web_services/geoid.shtml>`_
@@ -18,8 +16,6 @@ def get_ngs_url(lat: float, lon: float, ngs_model: int):
 
 def get_ngs_json(ngs_url: str):
     """
-    
-    Variables:
     :param str ngs_url: Decimal latitude
     :return: The returned json (if applicable)
     :rtype: json
@@ -44,11 +40,14 @@ def get_ngs_json(ngs_url: str):
 
 def get_vdatum_url(lat: float, lon: float, vdatum_model: str, region: str):
     """
+    .. |vdatum| raw:: html
+
+        <a href="https://vdatum.noaa.gov/docs/services.html#step160" target="_blank">see list</a>
+
     
-    Variables:
     :param float lat: Decimal latitude
     :param float lon: Decimal longitude
-    :param str vdatum_model: The VDatum geoid, tidal, or potential model to use for lookup `(see list) <https://vdatum.noaa.gov/docs/services.html#step160>`_
+    :param str vdatum_model: The VDatum geoid, tidal, or potential model to use for lookup (|vdatum|)
     :param str region: The region to search
     """
     wgs = 'WGS84_G1674'
@@ -67,10 +66,9 @@ def get_vdatum_url(lat: float, lon: float, vdatum_model: str, region: str):
 def get_vdatum_json(vdatum_url, region):
     """
     
-    Variables:
     :param float lat: Decimal latitude
     :param float lon: Decimal longitude
-    :param str vdatum_model: The VDatum geoid, tidal, or potential model to use for lookup `(see list) <https://vdatum.noaa.gov/docs/services.html#step160>`_
+    :param str vdatum_model: The VDatum geoid, tidal, or potential model to use for lookup (|vdatum|)
     :param str region: The region to search
     """
     while True:
@@ -138,7 +136,6 @@ def get_vdatum_json(vdatum_url, region):
         use of third-party software such as
         `LASTools <https://github.com/LAStools/LAStools>`_.
 
-    Variables:
     :param user_vrs: The user-specified geoid model to convert from if none is found in the file header
     :type user_vrs: str or None
     :param las_vrs: WKT-derived model from file header to convert from (overrides ``user_vrs``)

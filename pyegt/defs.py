@@ -26,6 +26,19 @@ NGS_MODELS = {
     'GEOID12B': 13,
     'GEOID18': 14,
 }
+""".. |ngsafg| raw:: html
+
+    <a href="https://www.ngs.noaa.gov/web_services/geoid.shtml" target="_blank">NOAA NGS API for Geoid</a>
+
+Geoid model numbers used in the NGS API.
+From |ngsafg|.
+
+Mapping::
+
+    NGS_MODELS = {'GEOID99': 1, 'G99SSS': 2, 'GEOID03': 3, 'USGG2003': 4,
+                  'GEOID06': 5, 'USGG2009': 6, 'GEOID09': 7, 'XUSHG': 9,
+                  'USGG2012': 11, 'GEOID12A': 12, 'GEOID12B': 13, 'GEOID18': 14}
+"""
 
 NGS_URL = 'https://geodesy.noaa.gov/api/geoid/ght?lat=%s&lon=%s&model=%s'
 
@@ -43,12 +56,24 @@ VDATUM_MODELS = [
     'SIOMIT92', 'WGS84_G730', 'ITRF91', 'ITRF90', 'ITRF89', 'ITRF88',
     'WGS84_TRANSIT', 'WGS84_G1762', 'WGS84_G2139'
 ]
+""".. |vdmodels| raw:: html
+
+    <a href="https://vdatum.noaa.gov/docs/services.html#step160" target="_blank">VDatum API Vertical Reference Frames List</a>
+
+List of geoid and tidal models used in the VDatum API. From |vdmodels|.
+"""
 
 REGIONS = [
     # VDatum regions (from https://vdatum.noaa.gov/docs/services.html#step140)
     'contiguous', 'ak', 'seak', 'as', 'chesapeak_delaware',
     'westcoast', 'gcnmi', 'hi', 'prvi', 'sgi', 'spi', 'sli'
 ]
+""".. |regions| raw:: html
+
+    <a href="https://vdatum.noaa.gov/docs/services.html#step140" target="_blank">VDatum API Regions List</a>
+
+List of regions used in the VDatum API. From |regions|.
+"""
 
 VDATUM_URL = 'https://vdatum.noaa.gov/vdatumweb/api/convert?s_x=%s&s_y=%s&s_h_frame=%s&s_v_frame=%s&s_v_geoid=%s&t_h_frame=%s&t_v_frame=%s&t_v_geoid=%s&region=%s'
 

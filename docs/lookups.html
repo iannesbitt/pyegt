@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Using pyegt &mdash; pyegt 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="pyegt.height" href="height.html" />
+    <link rel="prev" title="2. Installation" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            pyegt
+              <img src="_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+              <div class="version">
+                0.0.1
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">1. About pyegt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">2. Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Using pyegt</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Library</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="height.html"><code class="docutils literal notranslate"><span class="pre">pyegt.height</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="defs.html"><code class="docutils literal notranslate"><span class="pre">pyegt.defs</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html"><code class="docutils literal notranslate"><span class="pre">pyegt.test</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html"><code class="docutils literal notranslate"><span class="pre">pyegt.utils</span></code></a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pyegt</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Using pyegt</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/lookups.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="using-pyegt">
+<h1><span class="section-number">3. </span>Using pyegt<a class="headerlink" href="#using-pyegt" title="Permalink to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">pyegt</span></code> is designed to be easy to use.
+Simply initialize a <a class="reference internal" href="height.html#pyegt.height.HeightModel" title="pyegt.height.HeightModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">pyegt.height.HeightModel</span></code></a> object to perform a datum lookup.
+The following example uses the <a href="https://www.ngs.noaa.gov/web_services/geoid.shtml" target="_blank">NOAA NGS API for Geoid</a> to perform a lookup against
+<a href="https://www.ngs.noaa.gov/GEOID/GEOID12B/" target="_blank">GEOID12B</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyegt.height</span> <span class="kn">import</span> <span class="n">HeightModel</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">HeightModel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">44.256616</span><span class="p">,</span> <span class="n">lon</span><span class="o">=-</span><span class="mf">73.964784</span><span class="p">,</span> <span class="n">from_model</span><span class="o">=</span><span class="s1">&#39;GEOID12B&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
+<span class="go">HeightModel(lat=44.256616, lon=-73.964784, from_model=&#39;GEOID12B&#39;, region=&#39;None&#39;) -&gt; -28.157 meters</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="go">-28.157</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="o">.</span><span class="n">in_feet_us_survey</span><span class="p">()</span>
+<span class="go">-92.37842416572809</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">pyegt</span></code> can also be used to query the <a href="https://vdatum.noaa.gov/docs/services.html" target="_blank">VDatum API</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyegt.height</span> <span class="kn">import</span> <span class="n">HeightModel</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">HeightModel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">44.256616</span><span class="p">,</span> <span class="n">lon</span><span class="o">=-</span><span class="mf">73.964784</span><span class="p">,</span> <span class="n">from_model</span><span class="o">=</span><span class="s1">&#39;EGM2008&#39;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">&#39;contiguous&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span>
+<span class="go">HeightModel(model=&#39;EGM2008&#39;, lat=44.256616, lon=-73.964784, region=&#39;contiguous&#39;) -&gt; -28.899 meters</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">region</span></code> argument must be supplied for VDatum queries.
+If it is not supplied by the user, it will default to <code class="docutils literal notranslate"><span class="pre">&quot;contiguous&quot;</span></code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>VDatum and NGS geoid APIs are highly functional API software.
+<code class="docutils literal notranslate"><span class="pre">pyegt</span></code> is a wrapper that does not utilize all of their functionality.
+Its sole function is to perform lookups of ellipsoid height at
+specific locations on geoid and tidal models.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="install.html" class="btn btn-neutral float-left" title="2. Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="height.html" class="btn btn-neutral float-right" title="pyegt.height" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, National Center for Ecological Analysis and Synthesis, University of California Santa Barbara (NCEAS-UCSB).</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
