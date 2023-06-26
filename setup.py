@@ -12,7 +12,7 @@ setuptools.setup(
     description='Look up geoid and tidal model heights relative to the ellipsoid',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/iannesbitt/pyegt',
+    url='https://iannesbitt.github.io/pyegt',
     packages=setuptools.find_packages(),
     include_package_data=True,
     install_requires=[
@@ -26,7 +26,7 @@ setuptools.setup(
     },
     python_requires='>=3.9, <4.0',
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Intended Audience :: Education',
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: Apache Software License',
