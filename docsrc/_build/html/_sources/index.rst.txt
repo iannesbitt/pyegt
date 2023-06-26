@@ -16,7 +16,7 @@ pyegt |version|
     :target: https://pypi.org/project/pyegt
     :alt: PyPI
 .. image:: https://img.shields.io/conda/v/iannesbitt/pyegt
-    :target: https://anaconda.org/iannesbitt/readgssi
+    :target: https://anaconda.org/iannesbitt/pyegt
     :alt: Conda
 .. image:: https://img.shields.io/github/deployments/iannesbitt/pyegt/github-pages?label=docs
     :target: https://iannesbitt.github.io/pyegt

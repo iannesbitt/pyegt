@@ -5,7 +5,7 @@
 *Ian Nesbitt, NCEAS-UCSB*
 
 [![PyPI](https://img.shields.io/pypi/v/pyegt)](https://pypi.org/project/pyegt)
-[![Conda](https://img.shields.io/conda/v/iannesbitt/pyegt)](https://anaconda.org/iannesbitt/readgssi)
+[![Conda](https://img.shields.io/conda/v/iannesbitt/pyegt)](https://anaconda.org/iannesbitt/pyegt)
 [![Docs](https://img.shields.io/github/deployments/iannesbitt/pyegt/github-pages?label=docs)](https://iannesbitt.github.io/pyegt)
 
 `pyegt` is an open source program developed by [NCEAS](https://nceas.ucsb.edu)
