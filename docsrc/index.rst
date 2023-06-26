@@ -18,6 +18,9 @@ pyegt |version|
 .. image:: https://img.shields.io/conda/v/iannesbitt/pyegt
     :target: https://anaconda.org/iannesbitt/readgssi
     :alt: Conda
+.. image:: https://img.shields.io/github/deployments/iannesbitt/pyegt/github-pages?label=docs
+    :target: https://iannesbitt.github.io/pyegt
+    :alt: GitHub deployments
 
 | |github|
 | **Ellipsoid-relative geoid and tidal model height lookup**
