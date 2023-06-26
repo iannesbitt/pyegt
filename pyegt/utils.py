@@ -26,7 +26,6 @@ def get_ngs_json(ngs_url: str):
         response = requests.get(ngs_url)
         json_data = response.json() if response and response.status_code == 200 else None
         if json_data and 'geoidHeight' in json_data:
-            print('Found geoidHeight value of %s' % (json_data['geoidHeight']))
             return json_data
         if json_data and (not 'geoidHeight' in json_data):
             print('Json data request returned in error: %s' % (json_data))
