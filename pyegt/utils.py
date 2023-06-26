@@ -4,7 +4,7 @@ from typing import Union, Literal
 
 from . import defs
 
-def get_ngs_url(lat: float, lon: float, ngs_model: int):
+def get_ngs_url(lat: float, lon: float, ngs_model: int) -> str:
     """
     :param float lat: Decimal latitude
     :param float lon: Decimal longitude
@@ -14,11 +14,13 @@ def get_ngs_url(lat: float, lon: float, ngs_model: int):
     """
     return defs.NGS_URL % (lat, lon, ngs_model)
 
-def get_ngs_json(ngs_url: str):
+def get_ngs_json(ngs_url: str) -> dict:
     """
-    :param str ngs_url: Decimal latitude
+    :param str ngs_url: The NGS query URL
     :return: The returned json (if applicable)
     :rtype: json
+    :raises AttributeError: if geoidHeight is not in returned json
+    :raises ConnectionError: if no NGS json is returned in 3 tries
     """
     i = 0
     while True:
@@ -28,16 +30,14 @@ def get_ngs_json(ngs_url: str):
         if json_data and 'geoidHeight' in json_data:
             return json_data
         if json_data and (not 'geoidHeight' in json_data):
-            print('Json data request returned in error: %s' % (json_data))
-            exit(1)
+            raise AttributeError('geoidHeight not in returned json:\n%s' % (json_data))
         if i < 3:
             i += 1
             time.sleep(1)
         else:
-            print('Could not complete request for NGS API in %s tries.' % (i  ))
-            exit(1)
+            raise ConnectionError('Could not get NGS json in %s tries.' % (i))
 
-def get_vdatum_url(lat: float, lon: float, vdatum_model: str, region: str):
+def get_vdatum_url(lat: float, lon: float, vdatum_model: str, region: str) -> str:
     """
     .. |vdatum| raw:: html
 
@@ -48,6 +48,8 @@ def get_vdatum_url(lat: float, lon: float, vdatum_model: str, region: str):
     :param float lon: Decimal longitude
     :param str vdatum_model: The VDatum geoid, tidal, or potential model to use for lookup (|vdatum|)
     :param str region: The region to search
+    :return: The VDatum query URL
+    :rtype: str
     """
     wgs = 'WGS84_G1674'
     return defs.VDATUM_URL % (
@@ -62,13 +64,14 @@ def get_vdatum_url(lat: float, lon: float, vdatum_model: str, region: str):
             region # region
             )
 
-def get_vdatum_json(vdatum_url, region):
+def get_vdatum_json(vdatum_url, region) -> dict:
     """
     
-    :param float lat: Decimal latitude
-    :param float lon: Decimal longitude
-    :param str vdatum_model: The VDatum geoid, tidal, or potential model to use for lookup (|vdatum|)
+    :param str vdatum_url: The VDatum query URL
     :param str region: The region to search
+    :return: JSON response from VDatum API
+    :rtype: dict
+    :raises AttributeError: if the returned JSON has an error code
     """
     while True:
         print('Querying %s' % (vdatum_url))
