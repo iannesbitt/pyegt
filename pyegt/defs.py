@@ -61,6 +61,22 @@ VDATUM_MODELS = [
     <a href="https://vdatum.noaa.gov/docs/services.html#step160" target="_blank">VDatum API Vertical Reference Frames List</a>
 
 List of geoid and tidal models used in the VDatum API. From |vdmodels|.
+
+Definition::
+
+    VDATUM_MODELS = [
+        'NAVD88', 'NGVD29', 'ASVD02', 'W0_USGG2012', 'GUVD04', 'NMVD03', 'PRVD02',
+        'VIVD09', 'CRD', 'EGM2008', 'EGM1996', 'EGM1984', 'XGEOID16B', 'XGEOID17B',
+        'XGEOID18B', 'XGEOID19B', 'XGEOID20B', 'IGLD85', 'LWD_IGLD85',
+        'OHWM_IGLD85', 'CRD', 'LMSL', 'MLLW', 'MLW', 'MTL', 'DTL', 'MHW', 'MHHW',
+        'LWD', 'NAD27', 'NAD83_1986', 'NAD83_2011', 'NAD83_NSRS2007',
+        'NAD83_MARP00', 'NAD83_PACP00', 'WGS84_G1674', 'ITRF2014', 'IGS14',
+        'ITRF2008', 'IGS08', 'ITRF2005', 'IGS2005', 'WGS84_G1150', 'ITRF2000',
+        'IGS00', 'IGb00', 'ITRF96', 'WGS84_G873', 'ITRF94', 'ITRF93', 'ITRF92',
+        'SIOMIT92', 'WGS84_G730', 'ITRF91', 'ITRF90', 'ITRF89', 'ITRF88',
+        'WGS84_TRANSIT', 'WGS84_G1762', 'WGS84_G2139'
+    ]
+
 """
 
 REGIONS = [
@@ -73,6 +89,12 @@ REGIONS = [
     <a href="https://vdatum.noaa.gov/docs/services.html#step140" target="_blank">VDatum API Regions List</a>
 
 List of regions used in the VDatum API. From |regions|.
+
+Definition::
+
+    REGIONS = ['contiguous', 'ak', 'seak', 'as', 'chesapeak_delaware',
+               'westcoast', 'gcnmi', 'hi', 'prvi', 'sgi', 'spi', 'sli']
+
 """
 
 VDATUM_URL = 'https://vdatum.noaa.gov/vdatumweb/api/convert?s_x=%s&s_y=%s&s_h_frame=%s&s_v_frame=%s&s_v_geoid=%s&t_h_frame=%s&t_v_frame=%s&t_v_geoid=%s&region=%s'
