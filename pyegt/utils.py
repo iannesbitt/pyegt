@@ -4,6 +4,32 @@ from typing import Union, Literal
 
 from . import defs
 
+def model_search(vrs: str=None) -> Union[str, Literal[None]]:
+    """
+    Get a model name from a search term containing that name.
+
+    Example::
+
+        >>> egm = "EGM2008 height"
+        >>> model_search(vrs=egm)
+        "EGM2008"
+        >>> navd88 = "NAVD88 (US Survey Feet)"
+        >>> model_search(vrs=navd88)
+        "NAVD88"
+        >>> bad_name = "NAVD 88"
+        >>> model_search(vrs=bad_name)
+        None
+
+    :param str vrs: The search term containing the model name
+    :return: A verified model name or ``None`` if none is found
+    :rtype: str or None
+    """
+    for m in defs.MODEL_LIST:
+        if m in vrs:
+            # sometimes vrs from WKT will be formatted like "EGM2008 height" and this should catch that
+            return m
+    return None
+
 def get_ngs_url(lat: float, lon: float, ngs_model: int) -> str:
     """
     :param float lat: Decimal latitude
