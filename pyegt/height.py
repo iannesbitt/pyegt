@@ -112,6 +112,12 @@ class HeightModel:
         Documentation can be found here for the
         `NGS <https://www.ngs.noaa.gov/web_services/geoid.shtml>`_ and
         `VDatum <https://vdatum.noaa.gov/docs/services.html>`_ APIs.
+
+        :param model: Model to use for lookup
+        :type model: str or None
+        :return: The height of the given model in the given location
+        :rtype: float
+        :raises AttributeError: if no model has been set
         """
         if (not model) and (not self.model):
             raise AttributeError('Cannot calculate model height, as no model has been set.')
@@ -125,9 +131,10 @@ class HeightModel:
         Compute the height above the ellipsoid for the given vertical reference system.
 
         :param vrs: Vertical reference system
-        :type vrs: pyproj.CRS or None
+        :type vrs: pyproj.crs.CRS or None
         :return: The modeled geoid height above the ellipsoid
         :rtype: float
+        :raises AttributeError: if no VRS has been set
         """
         if (not vrs) and (not self.vrs):
             raise AttributeError('Cannot calculate VRS height, as no VRS has been set.')
@@ -182,8 +189,11 @@ class HeightModel:
 
     def get_height(self) -> float:
         """
+        Get the height in meters of the given ``self.model`` above the ellipsoid.
+
         :return: The modeled geoid height above the ellipsoid
         :rtype: float
+        :raises ValueError: if no model is found matching ``self.model``
         """
         if not self.verify_model():
             raise ValueError('No model found matching "%s"' % (self.model))
@@ -230,7 +240,7 @@ class HeightModel:
     
     def in_cm(self) -> float:
         """
-        Convert to centimeters.
+        Convert to centimeters (``self.height * 100``).
 
         :return: Height value in cm (if it exists)
         :rtype: float
@@ -307,6 +317,7 @@ class HeightModel:
 
         :return: Height value (if exists)
         :rtype: float
+        :raises ValueError: if no ``self.height`` value exists
         """
         if self.height:
             return self.height
@@ -349,6 +360,7 @@ class HeightModel:
 
         :return: Boolean equality of two floats
         :rtype: bool
+        :raises ValueError: if no ``self.height`` value exists
         """
         if self.height:
             return isclose(self.height, float(__value), rel_tol=1e-9, abs_tol=0.0)

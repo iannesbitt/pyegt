@@ -271,6 +271,20 @@ Finally, it will call <code class="xref py py-func docutils literal notranslate"
 <p>Documentation can be found here for the
 <a class="reference external" href="https://www.ngs.noaa.gov/web_services/geoid.shtml">NGS</a> and
 <a class="reference external" href="https://vdatum.noaa.gov/docs/services.html">VDatum</a> APIs.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><em>None</em>) – Model to use for lookup</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The height of the given model in the given location</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#AttributeError" title="(in Python v3.11)"><strong>AttributeError</strong></a> – if no model has been set</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -279,13 +293,16 @@ Finally, it will call <code class="xref py py-func docutils literal notranslate"
 <dd><p>Compute the height above the ellipsoid for the given vertical reference system.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>vrs</strong> (<em>pyproj.CRS</em><em> or </em><em>None</em>) – Vertical reference system</p>
+<dd class="field-odd"><p><strong>vrs</strong> (<a class="reference external" href="https://pyproj4.github.io/pyproj/stable/api/crs/crs.html#pyproj.crs.CRS" title="(in pyproj v3.6.0)"><em>pyproj.crs.CRS</em></a><em> or </em><em>None</em>) – Vertical reference system</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The modeled geoid height above the ellipsoid</p>
 </dd>
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#AttributeError" title="(in Python v3.11)"><strong>AttributeError</strong></a> – if no VRS has been set</p>
 </dd>
 </dl>
 </dd></dl>
@@ -310,12 +327,16 @@ Finally, it will call <code class="xref py py-func docutils literal notranslate"
 <dl class="py method">
 <dt class="sig sig-object py" id="pyegt.height.HeightModel.get_height">
 <span class="sig-name descname"><span class="pre">get_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.get_height" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Get the height in meters of the given <code class="docutils literal notranslate"><span class="pre">self.model</span></code> above the ellipsoid.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The modeled geoid height above the ellipsoid</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – if no model is found matching <code class="docutils literal notranslate"><span class="pre">self.model</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -323,7 +344,7 @@ Finally, it will call <code class="xref py py-func docutils literal notranslate"
 <dl class="py method">
 <dt class="sig sig-object py" id="pyegt.height.HeightModel.in_cm">
 <span class="sig-name descname"><span class="pre">in_cm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.in_cm" title="Permalink to this definition"></a></dt>
-<dd><p>Convert to centimeters.</p>
+<dd><p>Convert to centimeters (<code class="docutils literal notranslate"><span class="pre">self.height</span> <span class="pre">*</span> <span class="pre">100</span></code>).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Height value in cm (if it exists)</p>
