@@ -50,7 +50,7 @@ def get_ngs_json(ngs_url: str) -> dict:
     :return: The returned json (if applicable)
     :rtype: json
     :raises AttributeError: if geoidHeight is not in returned json
-    :raises ConnectionError: if no NGS json is returned in 3 tries
+    :raises ConnectionError: if no NGS JSON is returned in 3 tries
     """
     i = 0
     while True:
@@ -101,7 +101,9 @@ def get_vdatum_json(vdatum_url, region) -> dict:
     :rtype: dict
     :raises AttributeError: if the returned JSON has an error indicating the set region is invalid
     :raises AttributeError: if the returned JSON has a generic error code
+    :raises ConnectionError: if no VDatum JSON is returned in 3 tries
     """
+    i = 0
     while True:
         print('Querying %s' % (vdatum_url))
         response = requests.get(vdatum_url)
@@ -113,6 +115,11 @@ def get_vdatum_json(vdatum_url, region) -> dict:
                 raise AttributeError('Region "%s" is not valid!' % (region))
             else:
                 raise AttributeError('VDatum API error %s: %s' % (json_data['errorCode'], json_data['message']))
+        if i < 3:
+            i += 1
+            time.sleep(1)
+        else:
+            raise ConnectionError('Could not get NGS json in %s tries.' % (i))
 
 """def adjustment(user_vrs: Union[str, Literal[None]]=None,
                las_vrs: Union[str, Literal[None]]=None, # overrides user_vrs.

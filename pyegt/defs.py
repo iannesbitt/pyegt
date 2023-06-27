@@ -26,10 +26,12 @@ NGS_MODELS = {
     'GEOID12B': 13,
     'GEOID18': 14,
 }
-""".. |ngsafg| raw:: html
+"""
+.. |ngsafg| raw:: html
 
     <a href="https://www.ngs.noaa.gov/web_services/geoid.shtml" target="_blank">NOAA NGS API for Geoid</a>
 
+    
 Geoid model numbers used in the NGS API.
 From |ngsafg|.
 
@@ -105,5 +107,4 @@ for m in NGS_MODELS:
 for m in VDATUM_MODELS:
     MODEL_LIST.append(m)
 """
-The full list of models from NGS and VDatum APIs described here.
 """

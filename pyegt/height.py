@@ -219,7 +219,7 @@ class HeightModel:
 
     def in_feet_us_survey(self) -> float:
         """
-        Convert to US survey foot (for imperial feet use `in_feet()`).
+        Convert to US survey foot (for imperial feet use ``in_feet()``).
         1 imperial foot = 0.999998 US survey feet
 
         :return: Height value in usft (if it exists)
@@ -230,7 +230,7 @@ class HeightModel:
 
     def in_feet(self) -> float:
         """
-        Convert to imperial foot (for US survey feet use `in_feet_us_survey()`).
+        Convert to imperial foot (for US survey feet use ``in_feet_us_survey()``).
         1 imperial foot = 0.999998 US survey feet
 
         :return: Height value in ft (if it exists)
@@ -265,7 +265,7 @@ class HeightModel:
         """
         Convert to string using ``__str__``.
 
-        :return:
+        :return: The height value in meters represented in string format
         :rtype: str
         """
         return self.__str__()
@@ -357,8 +357,9 @@ class HeightModel:
 
     def __eq__(self, __value: object) -> bool:
         """
-        Use `math.isclose()` to compare as floating point numbers are not always directly comparable.
+        Use :py:func:`math.isclose()` to compare as floating point numbers are not always directly comparable.
 
+        :meta public:
         :return: Boolean equality of two floats
         :rtype: bool
         :raises ValueError: if no ``self.height`` value exists

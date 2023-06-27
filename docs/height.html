@@ -57,6 +57,10 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">pyegt.height</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#pyegt.height.HeightModel"><code class="docutils literal notranslate"><span class="pre">HeightModel</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.__eq__"><code class="docutils literal notranslate"><span class="pre">HeightModel.__eq__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.__float__"><code class="docutils literal notranslate"><span class="pre">HeightModel.__float__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.__repr__"><code class="docutils literal notranslate"><span class="pre">HeightModel.__repr__()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.__str__"><code class="docutils literal notranslate"><span class="pre">HeightModel.__str__()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.as_dict"><code class="docutils literal notranslate"><span class="pre">HeightModel.as_dict()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.as_float"><code class="docutils literal notranslate"><span class="pre">HeightModel.as_float()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyegt.height.HeightModel.as_string"><code class="docutils literal notranslate"><span class="pre">HeightModel.as_string()</span></code></a></li>
@@ -153,6 +157,74 @@ model height relative to the ellipsoid (<code class="docutils literal notranslat
 </dd>
 </dl>
 <dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">_HeightModel__value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.11)"><span class="pre">object</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)"><span class="pre">bool</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.__eq__" title="Permalink to this definition"></a></dt>
+<dd><p>Use <a class="reference external" href="https://docs.python.org/3/library/math.html#math.isclose" title="(in Python v3.11)"><code class="xref py py-func docutils literal notranslate"><span class="pre">math.isclose()</span></code></a> to compare as floating point numbers are not always directly comparable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Boolean equality of two floats</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.11)">bool</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – if no <code class="docutils literal notranslate"><span class="pre">self.height</span></code> value exists</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.__float__">
+<span class="sig-name descname"><span class="pre">__float__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.__float__" title="Permalink to this definition"></a></dt>
+<dd><p>Convert to float.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Height value (if exists)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)">float</a></p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.11)"><strong>ValueError</strong></a> – if no <code class="docutils literal notranslate"><span class="pre">self.height</span></code> value exists</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.__repr__" title="Permalink to this definition"></a></dt>
+<dd><p>Convert to printable representation, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pyegt.height</span> <span class="kn">import</span> <span class="n">HeightModel</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">HeightModel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">64.506181</span><span class="p">,</span> <span class="n">lon</span><span class="o">=-</span><span class="mf">165.399282</span><span class="p">,</span> <span class="n">from_model</span><span class="o">=</span><span class="s1">&#39;EGM2008&#39;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">&#39;ak&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">repr</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="go">HeightModel(lat=64.506181, lon=-165.399282, from_model=&#39;EGM2008&#39;, region=&#39;ak&#39;) -&gt; 6.998 meters</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>repr() value</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyegt.height.HeightModel.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.__str__" title="Permalink to this definition"></a></dt>
+<dd><p>Convert to string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>String representation of height or <code class="docutils literal notranslate"><span class="pre">&quot;n/a&quot;</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyegt.height.HeightModel.as_dict">
 <span class="sig-name descname"><span class="pre">as_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.as_dict" title="Permalink to this definition"></a></dt>
 <dd><p>Return JSON object as dict using <code class="docutils literal notranslate"><span class="pre">__dict__</span></code>.</p>
@@ -186,7 +258,7 @@ model height relative to the ellipsoid (<code class="docutils literal notranslat
 <dd><p>Convert to string using <code class="docutils literal notranslate"><span class="pre">__str__</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p></p>
+<dd class="field-odd"><p>The height value in meters represented in string format</p>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)">str</a></p>
@@ -361,7 +433,7 @@ Finally, it will call <code class="xref py py-func docutils literal notranslate"
 <dl class="py method">
 <dt class="sig sig-object py" id="pyegt.height.HeightModel.in_feet">
 <span class="sig-name descname"><span class="pre">in_feet</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.in_feet" title="Permalink to this definition"></a></dt>
-<dd><p>Convert to imperial foot (for US survey feet use <cite>in_feet_us_survey()</cite>).
+<dd><p>Convert to imperial foot (for US survey feet use <code class="docutils literal notranslate"><span class="pre">in_feet_us_survey()</span></code>).
 1 imperial foot = 0.999998 US survey feet</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -376,7 +448,7 @@ Finally, it will call <code class="xref py py-func docutils literal notranslate"
 <dl class="py method">
 <dt class="sig sig-object py" id="pyegt.height.HeightModel.in_feet_us_survey">
 <span class="sig-name descname"><span class="pre">in_feet_us_survey</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></span><a class="headerlink" href="#pyegt.height.HeightModel.in_feet_us_survey" title="Permalink to this definition"></a></dt>
-<dd><p>Convert to US survey foot (for imperial feet use <cite>in_feet()</cite>).
+<dd><p>Convert to US survey foot (for imperial feet use <code class="docutils literal notranslate"><span class="pre">in_feet()</span></code>).
 1 imperial foot = 0.999998 US survey feet</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>

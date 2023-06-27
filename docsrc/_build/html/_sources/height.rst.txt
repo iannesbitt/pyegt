@@ -3,6 +3,7 @@
 
 .. automodule:: pyegt.height
     :members:
+    :special-members: __dict__, __eq__, __float__, __repr__, __str__
 
 ................
 
