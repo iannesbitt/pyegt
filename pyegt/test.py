@@ -18,6 +18,18 @@ def test():
     }
     MODELS = ['GEOID12B height',
               'EGM2008 height']
+    EXPECTED_VALUES = {
+        'GEOID12B height': {
+            'contiguous': -28.157,
+            'ak': 5.28,
+            'prvi': -43.285,
+        },
+        'EGM2008 height': {
+            'contiguous': -28.899,
+            'ak': 7.005,
+            'prvi': -45.473,
+        }
+    }
     TESTS = {}
     for m in MODELS:
         TESTS[m] = {}
@@ -28,11 +40,23 @@ def test():
                             from_model=m, region=t)
             TESTS[m][t] = {'lookup': repr(h),
                             'height': float(h),
+                            'expect': EXPECTED_VALUES[m][t],
                             'result': None}
             if TESTS[m][t]['lookup']:
-                repr(TESTS[m][t]['lookup'])
-                TESTS[m][t]['result'] = True
+                try:
+                    assert TESTS[m][t]['height'] == TESTS[m][t]['expect']
+                    TESTS[m][t]['result'] = True
+                except AssertionError:
+                    TESTS[m][t]['result'] = False
             else:
                 TESTS[m][t]['result'] = False
     js = json.dumps(TESTS, indent=2)
     print(js)
+    fail = False
+    for m in TESTS:
+        for t in m:
+            if not TESTS[m][t]['result']:
+                fail = True
+                print('%s (%s) test has failed!' % (m, t))
+    if fail:
+        exit(1)
