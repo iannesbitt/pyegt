@@ -1,6 +1,6 @@
 # Changes from v0.1.2
 
-
+- added more depth to testing routine
 
 # Changes from v0.1.1
 

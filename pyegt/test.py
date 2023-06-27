@@ -35,6 +35,8 @@ def test():
                 'prvi': -45.473,
             }
         }
+
+    If any test fails, the script will exit with an error after printing the results.
     """
     TEST_COORDS = {
         defs.REGIONS[0]: {'lat': 44.256616, 'lon': -73.964784,}, # Jumping Complex, Lake Placid, NY

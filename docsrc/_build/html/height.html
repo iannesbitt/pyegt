@@ -148,6 +148,9 @@ model height relative to the ellipsoid (<code class="docutils literal notranslat
 <li><p><strong>from_epsg</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a><em> or </em><em>None</em>) – Use an EPSG code to get a VRS to convert from</p></li>
 </ul>
 </dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#AttributeError" title="(in Python v3.11)"><strong>AttributeError</strong></a> – if more than one of [from_model, from_vrs, from_wkt, from_epsg] is set</p>
+</dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyegt.height.HeightModel.as_dict">

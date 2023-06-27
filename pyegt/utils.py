@@ -99,7 +99,8 @@ def get_vdatum_json(vdatum_url, region) -> dict:
     :param str region: The region to search
     :return: JSON response from VDatum API
     :rtype: dict
-    :raises AttributeError: if the returned JSON has an error code
+    :raises AttributeError: if the returned JSON has an error indicating the set region is invalid
+    :raises AttributeError: if the returned JSON has a generic error code
     """
     while True:
         print('Querying %s' % (vdatum_url))

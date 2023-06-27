@@ -51,6 +51,7 @@ class HeightModel:
     :type from_wkt: str or None
     :param from_epsg: Use an EPSG code to get a VRS to convert from
     :type from_epsg: str or None
+    :raises AttributeError: if more than one of [from_model, from_vrs, from_wkt, from_epsg] is set
     """
     def __init__(self,
                  lat: float,
