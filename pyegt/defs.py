@@ -104,3 +104,6 @@ for m in NGS_MODELS:
     MODEL_LIST.append(m)
 for m in VDATUM_MODELS:
     MODEL_LIST.append(m)
+"""
+The full list of models from NGS and VDatum APIs described here.
+"""

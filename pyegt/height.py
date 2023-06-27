@@ -86,9 +86,9 @@ class HeightModel:
     
     def from_model(self, model: Union[str, Literal[None]]=None):
         """
-        Compute the height above the ellipsoid for the given model.
+        Compute the height above the ellipsoid for the given model name.
         Will set ``self.model`` if the ``model`` variable is supplied.
-        Finally, it will call ``self.get_height()``.
+        Finally, it will call :py:func:`self.get_height()`.
 
         Valid model values are::
 
@@ -122,7 +122,12 @@ class HeightModel:
         
     def from_vrs(self, vrs: Union[CRS, Literal[None]]):
         """
+        Compute the height above the ellipsoid for the given vertical reference system.
 
+        :param vrs: Vertical reference system
+        :type vrs: pyproj.CRS or None
+        :return: The modeled geoid height above the ellipsoid
+        :rtype: float
         """
         if (not vrs) and (not self.vrs):
             raise AttributeError('Cannot calculate VRS height, as no VRS has been set.')
@@ -138,12 +143,24 @@ class HeightModel:
 
     def from_wkt(self, wkt: Union[str, Literal[None]]):
         """
+        Compute the height above the ellipsoid for the given well-known text VRS.
+
+        :param wkt: Well-known text describing a vertical reference system
+        :type wkt: str or None
+        :return: The modeled geoid height above the ellipsoid
+        :rtype: float
         """
         rs = CRS.from_wkt(wkt)
         return self.from_vrs(rs)
 
     def from_epsg(self, epsg: Union[str, int, Literal[None]]):
         """
+        Compute the height above the ellipsoid for the given EPSG code.
+
+        :param epsg: EPSG code indicating a vertical reference system
+        :type epsg: str or int or None
+        :return: The modeled geoid height above the ellipsoid
+        :rtype: float
         """
         rs = CRS.from_epsg(epsg)
         return self.from_vrs(rs)
@@ -165,6 +182,8 @@ class HeightModel:
 
     def get_height(self) -> float:
         """
+        :return: The modeled geoid height above the ellipsoid
+        :rtype: float
         """
         if not self.verify_model():
             raise ValueError('No model found matching "%s"' % (self.model))

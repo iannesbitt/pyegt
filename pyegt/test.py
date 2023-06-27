@@ -5,11 +5,36 @@ from .height import HeightModel
 
 def test():
     """
-    Run tests.
+    Run tests. Tests will be run with the following parameters:
 
-    - Try GEOID12B with US, AK, and PR coordinates.
+    - GEOID12B with US, AK, and PR coordinates::
 
-    - Try EGM2008 with US, AK, and PR coordinates.
+        from pyegt.height import HeightModel
+        HeightModel(lat=44.256616, lon=-73.964784, from_model='GEOID12B', region='contiguous')
+        HeightModel(lat=64.486036, lon=-165.292154, from_model='GEOID12B', region='ak')
+        HeightModel(lat=18.47131, lon=-66.136544, from_model='GEOID12B', region='prvi')
+
+    - EGM2008 with US, AK, and PR coordinates::
+
+        HeightModel(lat=44.256616, lon=-73.964784, from_model='EGM2008', region='contiguous')
+        HeightModel(lat=64.486036, lon=-165.292154, from_model='EGM2008', region='ak')
+        HeightModel(lat=18.47131, lon=-66.136544, from_model='EGM2008', region='prvi')
+
+        
+    Expected return height values::
+
+        EXPECTED_VALUES = {
+            'GEOID12B height': {
+                'contiguous': -28.157,
+                'ak': 5.28,
+                'prvi': -43.285,
+            },
+            'EGM2008 height': {
+                'contiguous': -28.899,
+                'ak': 7.005,
+                'prvi': -45.473,
+            }
+        }
     """
     TEST_COORDS = {
         defs.REGIONS[0]: {'lat': 44.256616, 'lon': -73.964784,}, # Jumping Complex, Lake Placid, NY

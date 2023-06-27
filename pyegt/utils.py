@@ -32,6 +32,8 @@ def model_search(vrs: str=None) -> Union[str, Literal[None]]:
 
 def get_ngs_url(lat: float, lon: float, ngs_model: int) -> str:
     """
+    Construct the API URL that will be used to query the NGS service.
+
     :param float lat: Decimal latitude
     :param float lon: Decimal longitude
     :param str ngs_model: The NGS geoid model to use for lookup `(see list) <https://www.ngs.noaa.gov/web_services/geoid.shtml>`_
@@ -42,6 +44,8 @@ def get_ngs_url(lat: float, lon: float, ngs_model: int) -> str:
 
 def get_ngs_json(ngs_url: str) -> dict:
     """
+    Use a given NGS API URL to get a response, and return the response if valid.
+
     :param str ngs_url: The NGS query URL
     :return: The returned json (if applicable)
     :rtype: json
@@ -65,14 +69,11 @@ def get_ngs_json(ngs_url: str) -> dict:
 
 def get_vdatum_url(lat: float, lon: float, vdatum_model: str, region: str) -> str:
     """
-    .. |vdatum| raw:: html
-
-        <a href="https://vdatum.noaa.gov/docs/services.html#step160" target="_blank">see list</a>
-
-    
+    Construct the API URL that will be used to query the VDatum service.
+        
     :param float lat: Decimal latitude
     :param float lon: Decimal longitude
-    :param str vdatum_model: The VDatum geoid, tidal, or potential model to use for lookup (|vdatum|)
+    :param str vdatum_model: The VDatum geoid, tidal, or geopotential model to use for lookup (see list at :py:data:`pyegt.defs.MODEL_LIST`)
     :param str region: The region to search
     :return: The VDatum query URL
     :rtype: str
@@ -92,6 +93,7 @@ def get_vdatum_url(lat: float, lon: float, vdatum_model: str, region: str) -> st
 
 def get_vdatum_json(vdatum_url, region) -> dict:
     """
+    Use a given VDatum API URL to get a response, and return the response if valid.
     
     :param str vdatum_url: The VDatum query URL
     :param str region: The region to search

@@ -93,11 +93,39 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyegt.test.test">
 <span class="sig-prename descclassname"><span class="pre">pyegt.test.</span></span><span class="sig-name descname"><span class="pre">test</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyegt.test.test" title="Permalink to this definition"></a></dt>
-<dd><p>Run tests.</p>
-<ul class="simple">
-<li><p>Try GEOID12B with US, AK, and PR coordinates.</p></li>
-<li><p>Try EGM2008 with US, AK, and PR coordinates.</p></li>
+<dd><p>Run tests. Tests will be run with the following parameters:</p>
+<ul>
+<li><p>GEOID12B with US, AK, and PR coordinates:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyegt.height</span> <span class="kn">import</span> <span class="n">HeightModel</span>
+<span class="n">HeightModel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">44.256616</span><span class="p">,</span> <span class="n">lon</span><span class="o">=-</span><span class="mf">73.964784</span><span class="p">,</span> <span class="n">from_model</span><span class="o">=</span><span class="s1">&#39;GEOID12B&#39;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">&#39;contiguous&#39;</span><span class="p">)</span>
+<span class="n">HeightModel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">64.486036</span><span class="p">,</span> <span class="n">lon</span><span class="o">=-</span><span class="mf">165.292154</span><span class="p">,</span> <span class="n">from_model</span><span class="o">=</span><span class="s1">&#39;GEOID12B&#39;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">&#39;ak&#39;</span><span class="p">)</span>
+<span class="n">HeightModel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">18.47131</span><span class="p">,</span> <span class="n">lon</span><span class="o">=-</span><span class="mf">66.136544</span><span class="p">,</span> <span class="n">from_model</span><span class="o">=</span><span class="s1">&#39;GEOID12B&#39;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">&#39;prvi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>EGM2008 with US, AK, and PR coordinates:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">HeightModel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">44.256616</span><span class="p">,</span> <span class="n">lon</span><span class="o">=-</span><span class="mf">73.964784</span><span class="p">,</span> <span class="n">from_model</span><span class="o">=</span><span class="s1">&#39;EGM2008&#39;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">&#39;contiguous&#39;</span><span class="p">)</span>
+<span class="n">HeightModel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">64.486036</span><span class="p">,</span> <span class="n">lon</span><span class="o">=-</span><span class="mf">165.292154</span><span class="p">,</span> <span class="n">from_model</span><span class="o">=</span><span class="s1">&#39;EGM2008&#39;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">&#39;ak&#39;</span><span class="p">)</span>
+<span class="n">HeightModel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mf">18.47131</span><span class="p">,</span> <span class="n">lon</span><span class="o">=-</span><span class="mf">66.136544</span><span class="p">,</span> <span class="n">from_model</span><span class="o">=</span><span class="s1">&#39;EGM2008&#39;</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="s1">&#39;prvi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
 </ul>
+<p>Expected return height values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EXPECTED_VALUES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;GEOID12B height&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;contiguous&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">28.157</span><span class="p">,</span>
+        <span class="s1">&#39;ak&#39;</span><span class="p">:</span> <span class="mf">5.28</span><span class="p">,</span>
+        <span class="s1">&#39;prvi&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">43.285</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;EGM2008 height&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;contiguous&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">28.899</span><span class="p">,</span>
+        <span class="s1">&#39;ak&#39;</span><span class="p">:</span> <span class="mf">7.005</span><span class="p">,</span>
+        <span class="s1">&#39;prvi&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">45.473</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <hr class="docutils" />

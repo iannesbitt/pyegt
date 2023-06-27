@@ -96,7 +96,8 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyegt.utils.get_ngs_json">
 <span class="sig-prename descclassname"><span class="pre">pyegt.utils.</span></span><span class="sig-name descname"><span class="pre">get_ngs_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ngs_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#pyegt.utils.get_ngs_json" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Use a given NGS API URL to get a response, and return the response if valid.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>ngs_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The NGS query URL</p>
 </dd>
@@ -118,7 +119,8 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyegt.utils.get_ngs_url">
 <span class="sig-prename descclassname"><span class="pre">pyegt.utils.</span></span><span class="sig-name descname"><span class="pre">get_ngs_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">ngs_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.11)"><span class="pre">int</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#pyegt.utils.get_ngs_url" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Construct the API URL that will be used to query the NGS service.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>lat</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – Decimal latitude</p></li>
@@ -138,7 +140,8 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyegt.utils.get_vdatum_json">
 <span class="sig-prename descclassname"><span class="pre">pyegt.utils.</span></span><span class="sig-name descname"><span class="pre">get_vdatum_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vdatum_url</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#dict" title="(in Python v3.11)"><span class="pre">dict</span></a></span></span><a class="headerlink" href="#pyegt.utils.get_vdatum_json" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Use a given VDatum API URL to get a response, and return the response if valid.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>vdatum_url</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The VDatum query URL</p></li>
@@ -160,12 +163,13 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyegt.utils.get_vdatum_url">
 <span class="sig-prename descclassname"><span class="pre">pyegt.utils.</span></span><span class="sig-name descname"><span class="pre">get_vdatum_url</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><span class="pre">float</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">vdatum_model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><span class="pre">str</span></a></span></span><a class="headerlink" href="#pyegt.utils.get_vdatum_url" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
+<dd><p>Construct the API URL that will be used to query the VDatum service.</p>
+<dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>lat</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – Decimal latitude</p></li>
 <li><p><strong>lon</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.11)"><em>float</em></a>) – Decimal longitude</p></li>
-<li><p><strong>vdatum_model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The VDatum geoid, tidal, or potential model to use for lookup (<a href="https://vdatum.noaa.gov/docs/services.html#step160" target="_blank">see list</a>)</p></li>
+<li><p><strong>vdatum_model</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The VDatum geoid, tidal, or geopotential model to use for lookup (see list at <code class="xref py py-data docutils literal notranslate"><span class="pre">pyegt.defs.MODEL_LIST</span></code>)</p></li>
 <li><p><strong>region</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.11)"><em>str</em></a>) – The region to search</p></li>
 </ul>
 </dd>
