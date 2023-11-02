@@ -81,7 +81,7 @@ def test():
     print(js)
     fail = False
     for m in TESTS:
-        for t in m:
+        for t in TESTS[m]:
             if not TESTS[m][t]['result']:
                 fail = True
                 print('%s (%s) test has failed!' % (m, t))
