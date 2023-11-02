@@ -1,6 +1,7 @@
 import time
 import requests
 from typing import Union, Literal
+from pyproj import CRS
 
 from . import defs
 
@@ -25,6 +26,7 @@ def model_search(vrs: str=None) -> Union[str, Literal[None]]:
     :rtype: str or None
     """
     for m in defs.MODEL_LIST:
+        vrs = CRS.from_epsg(vrs) if isinstance(vrs, int) else vrs
         if m in vrs:
             # sometimes vrs from WKT will be formatted like "EGM2008 height" and this should catch that
             return m
