@@ -2,6 +2,7 @@ import time
 import requests
 from typing import Union, Literal
 from pyproj import CRS
+from logging import getLogger
 
 from . import defs
 
@@ -25,6 +26,8 @@ def model_search(vrs: str=None) -> Union[str, Literal[None]]:
     :return: A verified model name or ``None`` if none is found
     :rtype: str or None
     """
+    L = getLogger(__name__)
+    L.debug(f"Input vrs={vrs} (Type: {type(vrs)})")
     for m in defs.MODEL_LIST:
         vrs = CRS.from_epsg(vrs) if isinstance(vrs, int) else vrs
         if m in vrs:
