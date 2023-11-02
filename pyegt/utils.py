@@ -14,6 +14,9 @@ def model_search(vrs: str=None) -> Union[str, Literal[None]]:
         >>> egm = "EGM2008 height"
         >>> model_search(vrs=egm)
         "EGM2008"
+        >>> egmi = 3855
+        >>> model_search(vrs=egmi)
+        "EGM2008"
         >>> navd88 = "NAVD88 (US Survey Feet)"
         >>> model_search(vrs=navd88)
         "NAVD88"
