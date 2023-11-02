@@ -1,6 +1,8 @@
 import time
 import requests
 from typing import Union, Literal
+from pyproj import CRS
+from logging import getLogger
 
 from . import defs
 
@@ -13,6 +15,9 @@ def model_search(vrs: str=None) -> Union[str, Literal[None]]:
         >>> egm = "EGM2008 height"
         >>> model_search(vrs=egm)
         "EGM2008"
+        >>> egmi = 3855
+        >>> model_search(vrs=egmi)
+        "EGM2008"
         >>> navd88 = "NAVD88 (US Survey Feet)"
         >>> model_search(vrs=navd88)
         "NAVD88"
@@ -24,6 +29,12 @@ def model_search(vrs: str=None) -> Union[str, Literal[None]]:
     :return: A verified model name or ``None`` if none is found
     :rtype: str or None
     """
+    L = getLogger(__name__)
+    L.debug(f"Input vrs={vrs} (Type: {type(vrs)})")
+    if isinstance(vrs, int):
+        L.debug("Integer vrs found, converting to namestring if possible...")
+        vrs = CRS.from_epsg(vrs).name
+        L.debug(f"Named vrs={vrs} (Type: {type(vrs)})")
     for m in defs.MODEL_LIST:
         if m in vrs:
             # sometimes vrs from WKT will be formatted like "EGM2008 height" and this should catch that
