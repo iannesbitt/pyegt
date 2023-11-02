@@ -28,8 +28,11 @@ def model_search(vrs: str=None) -> Union[str, Literal[None]]:
     """
     L = getLogger(__name__)
     L.debug(f"Input vrs={vrs} (Type: {type(vrs)})")
+    if isinstance(vrs, int):
+        L.debug("Integer vrs found, converting to namestring if possible...")
+        vrs = CRS.from_epsg(vrs).name
+        L.debug(f"Named vrs={vrs} (Type: {type(vrs)})")
     for m in defs.MODEL_LIST:
-        vrs = CRS.from_epsg(vrs) if isinstance(vrs, int) else vrs
         if m in vrs:
             # sometimes vrs from WKT will be formatted like "EGM2008 height" and this should catch that
             return m
